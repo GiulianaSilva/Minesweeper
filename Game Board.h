@@ -53,8 +53,6 @@ void displayBaseTile(int rows, int columns, sf::RenderWindow& window, TextureMan
     }
 }
 
-
-
 //Function to generate coordinates for mines
 vector<sf::Vector2f> loadMines(vector<vector<Tiles>>& board, int rows, int columns, int mines, sf::RenderWindow& window) {
     srand(static_cast<unsigned int>(time(nullptr)));
@@ -327,7 +325,6 @@ void GameWindow(int columns, int rows, int mines, string username) {
   bool LB2= false;
 
 
-
     //Time
     int savedTime = 0;
     int Rtime = 100000000;
@@ -345,7 +342,6 @@ void GameWindow(int columns, int rows, int mines, string username) {
             if (event.type == sf::Event::Closed) {
                 GameWindow.close();
             }
-
 
             sf::Vector2i mousePos = sf::Mouse::getPosition(GameWindow);
             sf::Vector2f viewPos = GameWindow.mapPixelToCoords(mousePos);
@@ -410,7 +406,6 @@ void GameWindow(int columns, int rows, int mines, string username) {
 
                         }
 
-
                 } //closes game loop
 
 //checks for win everytime a tile is clicked on
@@ -446,12 +441,8 @@ void GameWindow(int columns, int rows, int mines, string username) {
                         clock.restart();
                     }
 
-
-
-
-                    // Open the leaderboard window
+// Open the leaderboard window
                 }
-
 
 // Player wins
                 if (!gameOver && checkForWin(board)) {
@@ -478,15 +469,11 @@ void GameWindow(int columns, int rows, int mines, string username) {
                         // Restart the clock
                         clock.restart();
                     }
-
                     showFlags(mineCoordinates, GameWindow);
                     win = true;
                     GameWindow.display();
                    leaderBoardWindow(columns, rows, username, Rtime);
-
                 }
-
-
             }
         //Handels Right click
         if (gameOver == false) {
@@ -528,9 +515,6 @@ void GameWindow(int columns, int rows, int mines, string username) {
             GameWindow.draw( ThirdClockSprite);
             GameWindow.draw( FourthClockSprite);
 
-
-
-
             // Draw stored sprites
             for (const auto &spriteData: drawnSprites) {
                 sf::Sprite BaseSprite;
@@ -570,17 +554,12 @@ void GameWindow(int columns, int rows, int mines, string username) {
 
             }
 
-
             if (LB2) {
                 if(gameOver == false) { // Check if the game is not over
                     displayBaseTile(rows, columns, GameWindow, textureManager);
-
                 }
-
-
                 LB2 = !LB2;
             }
-
 
             if (LB) {
                 GameWindow.display();
