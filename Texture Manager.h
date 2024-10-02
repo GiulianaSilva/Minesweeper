@@ -127,22 +127,11 @@ public:
         }
         textures["flag.png"] = FlagTexture;
 
-
-
-
-
-
-
 }
-
-
-
-
     // Method to get a texture by key
     sf::Texture& getTexture(const std::string& key) {
         return textures[key];
     }
-
     // Method to add a texture
     void addTexture(const std::string& key, const sf::Texture& texture) {
         textures[key] = texture;
